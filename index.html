@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMinds - Login</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        /* Common Styling for Sections */
+        .section {
+            display: none;
+            text-align: center;
+            background-color: #2e7d32;
+            padding: 30px;
+            border-radius: 8px;
+            color: white;
+            width: 90%;
+            max-width: 400px;
+        }
+        /* Swipe Section Styling */
+        .swipe-section img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: #a5d6a7;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Section -->
+<div class="section" id="loginSection" style="display: block;">
+    <h1>Welcome to GreenMinds</h1>
+    <p>Explore, Engage, and Make a Difference for Our Planet</p>
+    <div class="swipe-section">
+        <img src="./assets/login.jpg" alt="GreenMinds Image">
+    </div>
+    <button class="btn" onclick="showSection('userDetailsSection')">Login</button>
+</div>
+
+<!-- User Details Section -->
+<div class="section" id="userDetailsSection">
+    <h2>User Details</h2>
+    <form action="upload_page.html" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+        </div>
+        <button type="button" class="btn" onclick="showSection('ecoImpactSection')">Submit</button>
+    </form>
+</div>
+
+<!-- EcoImpact Section -->
+<div class="section" id="ecoImpactSection">
+    <h2>EcoImpact</h2>
+    <p>Explore, Engage, and Make a Difference for Our Planet</p>
+    <div class="feature">
+        <h3>Virtual Ecosystem Explorer</h3>
+        <p>Take a virtual journey through diverse ecosystems and learn about the unique flora and fauna.</p>
+        <button class="btn" onclick="showSection('ecosystemExplorerSection')">Start Exploring</button>
+    </div>
+    <div class="feature">
+        <h3>Climate Change Simulator</h3>
+        <p>Experiment with different scenarios to see the impact of human actions like deforestation and emission reduction on climate change. Learn how our choices impact the planet's future.</p>
+        <button class="btn" onclick="showSection('climateChangeSimulatorSection')">Start Exploring</button>
+    </div>
+    <div class="feature">
+        <h3>Transformative Sustainability Internship</h3>
+        <p>GreenMinds offers a sustainability internship with games, AR, certifications, and scholarships to promote environmental awareness.</p>
+        <button class="btn" onclick="showSection('sustainabilityInternshipSection')">Start Exploring</button>
+    </div>
+    <div class="feature">
+        <h3>Sustainable Lifestyle Game</h3>
+        <p>Make daily lifestyle choices to see their environmental impact. Get tips on sustainable alternatives and understanding cumulative effects of small changes in everyday life.</p>
+        <button class="btn" onclick="showSection('sustainableLifestyleGameSection')">Start Simulating</button>
+    </div>
+</div>
+
+<!-- Virtual Ecosystem Explorer Details Section -->
+<div class="section" id="ecosystemExplorerSection">
+    <h2>Virtual Ecosystem Explorer</h2>
+    <p>Choose an ecosystem to explore:</p>
+    <img src="./assets/ecosystemExplorer.jpg" alt="Ecosystem Explorer">
+    <ul>
+        <li>Forests - Discover diverse flora and fauna</li>
+        <li>Oceans - Dive into marine ecosystems</li>
+        <li>Deserts - Uncover the unique adaptations of desert life</li>
+    </ul>
+    <button class="btn" onclick="showSection('ecoImpactSection')">Back to EcoImpact</button>
+    <button class="btn" onclick="playPlantationVideo()">Post Plantation Video</button>
+</div>
+
+<script>
+    // Function to display the specified section and hide the others
+    function showSection(sectionId) {
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // Function to play the plantation video in a new tab or popup
+    function playPlantationVideo() {
+        const videoUrl = 'https://youtu.be/wY8DMF8nlw0?si=0Za_73UO5BN4sLZY;
+        window.open(videoUrl, '_blank');
+    }
+</script>
+<!-- Climate Change Simulator Details Section -->
+<div class="section" id="climateChangeSimulatorSection">
+    <h2>Climate Change Simulator</h2>
+    <p>Experiment with various scenarios:</p>
+    <img src="./assets/climateChangeSimulato.jpg" alt="Climate Change Simulator">
+    <ul>
+        <li>Deforestation Effects - See the impact of losing forest cover</li>
+        <li>Emission Reductions - Explore how lowering emissions affects climate</li>
+        <li>Water Conservation - Understand the role of water resources</li>
+    </ul>
+   
+<button class="btn" onclick="showSection('ecoImpactSection')">Back to EcoImpact</button>
+
+</div>
+
+<!-- Transformative Sustainability Internship Details Section -->
+<div class="section" id="sustainabilityInternshipSection">
+    <h2>Transformative Sustainability Internship</h2>
+    <p>Join our internship program to gain hands-on experience in sustainability:</p>
+    <img src="./assets/sustainabilityInternship.jpg"alt="Sustainability Internship">
+    <ul>
+        <li>Games and AR Experiences - Learn through interactive tools</li>
+        <li>Certifications - Earn valuable credentials</li>
+        <li>Scholarships - Support for further education</li>
+    </ul>
+    <button class="btn" onclick="showSection('ecoImpactSection')">Back to EcoImpact</button>
+</div>
+
+<!-- Sustainable Lifestyle Game Details Section -->
+<div class="section" id="sustainableLifestyleGameSection">
+    <h2>Sustainable Lifestyle Game</h2>
+    <p>Make daily lifestyle choices and see their environmental impact:</p>
+    <img src="./assets/sustainableLifestyleGame.jpg" alt="Sustainable Lifestyle Game">
+    <ul>
+        <li>Food Choices - Learn about sustainable diet options</li>
+        <li>Waste Reduction - Tips to reduce and recycle waste</li>
+        <li>Energy Conservation - Understand your energy usage</li>
+    </ul>
+    <button class="btn" onclick="showSection('ecoImpactSection')">Back to EcoImpact</button>
+</div>
+
+<script>
+    // Function to display the specified section and hide the others
+    function showSection(sectionId) {
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
